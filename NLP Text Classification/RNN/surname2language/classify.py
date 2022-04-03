@@ -13,6 +13,10 @@ import random
 import matplotlib.pyplot as plt
 random.seed(42)
 
+'''
+RNN class is the class that defines the network/architecture of the RNN.
+It inherits nn.Module class
+'''
 class RNN(nn.Module):
     def __init__(self, input_size, hidden_size, output_size):
         super(RNN, self).__init__()
@@ -36,6 +40,9 @@ class RNN(nn.Module):
         # Very first hidden state which is 0
         return torch.zeros(1, self.hidden_size)
 
+'''
+RNNClassifier is a custom class that contains all preprocessings, initializations, training and testing
+'''
 class RNNClassifier:
     def __init__(self, n_hidden = 128, learning_rate = 0.001, train_test_ratio = 0.75):
         self.cwd = os.getcwd()
